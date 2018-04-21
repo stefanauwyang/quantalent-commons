@@ -2,17 +2,18 @@ package com.quantalent.commons.exception;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class BaseRuntimeExceptionTest {
 
     @Test
     public void testNewBaseRuntimeException() {
         // Input
-        BaseRuntimeException exception = new BaseRuntimeException();
+        String message = "Message";
+        BaseRuntimeException exception = new BaseRuntimeException(message);
 
         // Output
-        assertTrue(exception instanceof RuntimeException);
+        assertEquals(message, exception.getMessage());
     }
 
 }
