@@ -6,7 +6,7 @@
 
     <groupId>com.quantalent</groupId>
     <artifactId>quantalent-commons</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>

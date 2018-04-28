@@ -6,4 +6,7 @@ public class BaseRuntimeException extends RuntimeException {
         super(message);
     }
 
+    public BaseRuntimeException(String message, Throwable e) {
+        super(message, e);
+    }
 }

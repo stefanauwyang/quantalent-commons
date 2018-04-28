@@ -6,4 +6,7 @@ public class BaseException extends Exception {
         super(message);
     }
 
+    public BaseException(String message, Throwable e) {
+        super(message, e);
+    }
 }
