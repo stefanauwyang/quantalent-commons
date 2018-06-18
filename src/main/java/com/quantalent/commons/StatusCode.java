@@ -2,9 +2,9 @@ package com.quantalent.commons;
 
 public enum StatusCode {
 
-    SUCCESS(100, "Success"),
-    FAIL(101, "Fail"),
-    INVALID_PARAM(102, "Invalid Parameter");
+    SUCCESS(0, "Success"),
+    FAIL(1999, "Fail"),
+    INVALID_PARAM(1100, "Invalid Parameter");
 
     private long code;
     private String description;

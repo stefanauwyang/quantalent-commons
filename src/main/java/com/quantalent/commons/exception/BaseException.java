@@ -9,7 +9,7 @@ public class BaseException extends Exception {
     /**
      * Use BaseException(StatusCode statusCode, String message) instead.
      *
-     * @param message
+     * @param message message about this exception
      */
     @Deprecated
     public BaseException(String message) {
@@ -19,7 +19,7 @@ public class BaseException extends Exception {
     /**
      * Use BaseException(StatusCode statusCode, String message, Throwable e) instead.
      *
-     * @param message
+     * @param message message about this exception
      */
     @Deprecated
     public BaseException(String message, Throwable e) {
@@ -35,4 +35,9 @@ public class BaseException extends Exception {
         super(message, e);
         this.statusCode = statusCode;
     }
+
+    public StatusCode getStatusCode() {
+        return statusCode;
+    }
+
 }
