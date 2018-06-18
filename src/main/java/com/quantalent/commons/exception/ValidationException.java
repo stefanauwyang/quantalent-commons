@@ -1,16 +1,20 @@
 package com.quantalent.commons.exception;
 
-import com.quantalent.commons.StatusCode;
+import com.quantalent.commons.ErrorCode;
 
 public class ValidationException extends BaseRuntimeException {
 
-    public ValidationException(StatusCode statusCode, String message) {
-        super(statusCode, message);
+    public ValidationException(ErrorCode errorCode, String message) {
+        super(errorCode, message);
     }
 
-    public static void checkNotNull(Object object, StatusCode statusCode, String errorMessage) {
+    public static void checkNotNull(Object object, ErrorCode errorCode, String errorMessage) {
         if (object == null) {
-            throw new ValidationException(statusCode, errorMessage);
+            if (errorMessage == null) {
+                throw new ValidationException(errorCode, errorCode.getDescription());
+            } else {
+                throw new ValidationException(errorCode, errorMessage);
+            }
         }
     }
 }

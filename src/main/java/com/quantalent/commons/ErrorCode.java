@@ -1,6 +1,6 @@
 package com.quantalent.commons;
 
-public enum StatusCode {
+public enum ErrorCode {
 
     SUCCESS(0, "Success"),
     FAIL(1999, "Fail"),
@@ -9,7 +9,7 @@ public enum StatusCode {
     private long code;
     private String description;
 
-    StatusCode(int code, String description) {
+    ErrorCode(int code, String description) {
         this.code = code;
         this.description = description;
     }

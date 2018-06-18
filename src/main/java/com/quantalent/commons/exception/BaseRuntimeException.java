@@ -1,38 +1,22 @@
 package com.quantalent.commons.exception;
 
-import com.quantalent.commons.StatusCode;
+import com.quantalent.commons.ErrorCode;
 
 public class BaseRuntimeException extends RuntimeException {
 
-    private StatusCode statusCode;
+    private ErrorCode errorCode;
 
-    /**
-     * Use BaseRuntimeException(StatusCode statusCode, String message) instead.
-     *
-     * @param message
-     */
-    @Deprecated
-    public BaseRuntimeException(String message) {
+    public BaseRuntimeException(ErrorCode errorCode, String message) {
         super(message);
+        this.errorCode = errorCode;
     }
 
-    /**
-     * Use BaseRuntimeException(StatusCode statusCode, String message, Throwable e) instead.
-     *
-     * @param message
-     */
-    @Deprecated
-    public BaseRuntimeException(String message, Throwable e) {
+    public BaseRuntimeException(ErrorCode errorCode, String message, Throwable e) {
         super(message, e);
+        this.errorCode = errorCode;
     }
 
-    public BaseRuntimeException(StatusCode statusCode, String message) {
-        super(message);
-        this.statusCode = statusCode;
-    }
-
-    public BaseRuntimeException(StatusCode statusCode, String message, Throwable e) {
-        super(message, e);
-        this.statusCode = statusCode;
+    public ErrorCode getErrorCode() {
+        return errorCode;
     }
 }
