@@ -4,7 +4,17 @@ import com.quantalent.commons.ErrorCode;
 
 public class BaseException extends Exception {
 
-    private ErrorCode errorCode;
+    protected ErrorCode errorCode;
+
+    public BaseException(String message) {
+        super(message);
+        this.errorCode = ErrorCode.FAIL;
+    }
+
+    public BaseException(String message, Throwable e) {
+        super(message, e);
+        this.errorCode = ErrorCode.FAIL;
+    }
 
     public BaseException(ErrorCode errorCode, String message) {
         super(message);
